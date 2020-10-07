@@ -1,0 +1,52 @@
+.title-persian {
+  grid-area: title-persian;
+}
+
+.artist-persian {
+  grid-area: artist-persian;
+}
+
+.title-english {
+  grid-area: title-english;
+}
+
+.artist-english {
+  grid-area: artist-english;
+}
+
+.title-persian,
+.artist-persian,
+.title-english,
+.artist-english {
+  text-align: center;
+}
+
+.artist-persian,
+.artist-english {
+  margin-top: -10px;
+  font-size: 13px;
+}
+
+.cover-art {
+  grid-area: cover-art;
+}
+
+.lyrics {
+  grid-area: lyrics;
+  margin: auto;
+}
+
+.cover-art,
+.lyrics {
+  margin: auto;
+}
+
+.cover-art {
+  background-color: grey;
+}
+
+section {
+  display: grid;
+  grid-template-areas: "title-english title-persian" "artist-english artist-persian" "cover-art lyrics";
+  grid-template-columns: 50% 50%;
+}
