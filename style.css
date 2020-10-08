@@ -50,6 +50,11 @@
 body {
   background-color: #111834;
   color: white;
+  font-size: 14px;
+  direction: rtl;
+  line-height: 1.7;
+  font-family: Vazir, Tahoma, "DejaVu Sans", helvetica, arial, freesans,
+    sans-serif;
 }
 
 .wavesurfer {
