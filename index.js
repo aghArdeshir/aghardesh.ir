@@ -1,4 +1,5 @@
 const lyricsTimes = [
+  { time: 0 },
   { time: 21.5, text: "باس بدونی توبه کنی پاک نمیشی" },
   { time: 23.6, text: "حتی اگه چالش کنی روش یه من خاک بریزی" },
   { time: 26.3, text: "ساعتا منتظرت موندن" },
@@ -35,10 +36,54 @@ const lyricsTimes = [
 ];
 
 const lyricsDom = document.getElementById("lyrics");
+const lyricsBackupDom = document.getElementById("lyrics-backup");
 
 var wavesurfer = WaveSurfer.create({
   container: "#waveform",
 });
+
+let lyricsText = "";
+let lyricsBackupText = "";
+
+function setLyricsText(text = "") {
+  if (lyricsText !== text) {
+    lyricsText = text || "";
+
+    lyricsDom.style.transition = "";
+    lyricsDom.style.top = "70px";
+    lyricsDom.style.fontSize = "10px";
+
+    lyricsDom.innerHTML = lyricsText;
+
+    requestAnimationFrame(() => {
+      lyricsDom.style.transition = "all 0.4s ease-out";
+      setTimeout(() => {
+        lyricsDom.style.top = "20px";
+        lyricsDom.style.fontSize = "26px";
+      });
+    });
+  }
+}
+
+function setLyricsBackupText(text = "") {
+  if (lyricsBackupText !== text) {
+    lyricsBackupText = text || "";
+
+    lyricsBackupDom.style.transition = "";
+    lyricsBackupDom.style.top = "60px";
+    lyricsBackupDom.style.fontSize = "26px";
+
+    lyricsBackupDom.innerHTML = lyricsBackupText;
+
+    requestAnimationFrame(() => {
+      lyricsBackupDom.style.transition = "all 0.4s ease-out";
+      setTimeout(() => {
+        lyricsBackupDom.style.top = "20px";
+        lyricsBackupDom.style.fontSize = "16px";
+      });
+    });
+  }
+}
 
 wavesurfer.load("./aghArdeshir - After Bad.mp3");
 wavesurfer.on("audioprocess", function (currentTime) {
@@ -55,7 +100,10 @@ wavesurfer.on("audioprocess", function (currentTime) {
     return;
   }
 
-  lyricsDom.innerHTML = lyricsTimes[index].text;
+  setLyricsText(lyricsTimes[index].text);
+  if (lyricsTimes[index - 1]) {
+    setLyricsBackupText(lyricsTimes[index - 1].text);
+  }
 });
 
 setTimeout(() => {

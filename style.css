@@ -11,8 +11,29 @@
 .lyrics {
   text-align: center;
   font-size: 26px;
-  min-height: 60px;
-  padding-top: 30px;
+  min-height: 80px;
+  padding-top: 10px;
+  position: relative;
+  height: 80px;
+  max-height: 80px;
+  display: block;
+  min-height: 80px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.lyrics-backup {
+  text-align: center;
+  font-size: 26px;
+  height: 40px;
+  max-height: 40px;
+  display: block;
+  min-height: 40px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .cover-art {
@@ -25,4 +46,8 @@
 body {
   background-color: rgba(0, 0, 0, 0.85);
   color: white;
+}
+
+.wavesurfer {
+  position: relative;
 }
