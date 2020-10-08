@@ -85,7 +85,9 @@ function setLyricsBackupText(text = "") {
   }
 }
 
-wavesurfer.load("./aghArdeshir - After Bad.mp3");
+wavesurfer.load(
+  "https://github.com/Ardeshir81/aghardesh.ir/raw/main/aghArdeshir%20-%20After%20Bad.mp3"
+);
 wavesurfer.on("audioprocess", function (currentTime) {
   const index =
     lyricsTimes.findIndex((member) => member.time >= currentTime) - 1;
@@ -109,5 +111,3 @@ wavesurfer.on("audioprocess", function (currentTime) {
 setTimeout(() => {
   wavesurfer.play();
 }, 1000);
-
-// test commit
