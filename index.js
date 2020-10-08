@@ -31,15 +31,17 @@ const lyricsTimes = [
   { time: 77.0, text: "روزا بیرون ولی شبا توی خودت هوا خوری" },
   { time: 79.5, text: "بذا بفهمنت بدونن که چی اصلی توعه" },
   { time: 82.4, text: "میتونی نمیکنی پس همه چی تقصیر توعه" },
-  { tmie: 85.5 },
+  { time: 85.5 },
 ];
 
 const lyricsDom = document.getElementById("lyrics");
-const audioDom = document.getElementById("music");
 
-audioDom.ontimeupdate = function () {
-  const currentTime = audioDom.currentTime;
+var wavesurfer = WaveSurfer.create({
+  container: "#waveform",
+});
 
+wavesurfer.load("./aghArdeshir - After Bad.mp3");
+wavesurfer.on("audioprocess", function (currentTime) {
   const index =
     lyricsTimes.findIndex((member) => member.time >= currentTime) - 1;
 
@@ -54,4 +56,8 @@ audioDom.ontimeupdate = function () {
   }
 
   lyricsDom.innerHTML = lyricsTimes[index].text;
-};
+});
+
+setTimeout(() => {
+  wavesurfer.play();
+}, 1000);
