@@ -5,7 +5,7 @@
 
 .artist-persian {
   margin-top: -10px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .lyrics {
@@ -15,11 +15,14 @@
   padding-top: 30px;
 }
 
-.cover-art,
-.lyrics {
+.cover-art {
+  background-color: grey;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin: auto;
 }
 
-.cover-art {
-  background-color: grey;
+body {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
 }
