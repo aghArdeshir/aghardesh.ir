@@ -35,6 +35,10 @@ const lyricsTimes = [
   { time: 85.5 },
 ];
 
+const cssTransition = "all 0.4s ease-out";
+const cssTop = "20px";
+const cssFontSize = "22px";
+
 const lyricsDom = document.getElementById("lyrics");
 const lyricsBackupDom = document.getElementById("lyrics-backup");
 
@@ -56,10 +60,10 @@ function setLyricsText(text = "") {
     lyricsDom.innerHTML = lyricsText;
 
     requestAnimationFrame(() => {
-      lyricsDom.style.transition = "all 0.4s ease-out";
+      lyricsDom.style.transition = cssTransition;
       setTimeout(() => {
-        lyricsDom.style.top = "20px";
-        lyricsDom.style.fontSize = "26px";
+        lyricsDom.style.top = cssTop;
+        lyricsDom.style.fontSize = cssFontSize;
       });
     });
   }
@@ -71,14 +75,14 @@ function setLyricsBackupText(text = "") {
 
     lyricsBackupDom.style.transition = "";
     lyricsBackupDom.style.top = "60px";
-    lyricsBackupDom.style.fontSize = "26px";
+    lyricsBackupDom.style.fontSize = cssFontSize;
 
     lyricsBackupDom.innerHTML = lyricsBackupText;
 
     requestAnimationFrame(() => {
-      lyricsBackupDom.style.transition = "all 0.4s ease-out";
+      lyricsBackupDom.style.transition = cssTransition;
       setTimeout(() => {
-        lyricsBackupDom.style.top = "20px";
+        lyricsBackupDom.style.top = cssTop;
         lyricsBackupDom.style.fontSize = "16px";
       });
     });
