@@ -1,7 +1,7 @@
-import lyricsTimes from "./songs/aghArdeshir - Ba'd Az Bad/lyrics.mjs";
+import { songs } from "./songs/songs.mjs";
+const song = songs.aghArdeshir.badAzBad;
 
-document.getElementsByClassName("cover-art")[0].src =
-  "songs/aghArdeshir - Ba'd Az Bad/ba'd-az-bad.original.1800x1800.png";
+document.getElementsByClassName("cover-art")[0].src = song.coverUrl;
 
 const cssTransition = "all 0.4s ease-out";
 const cssTop = "-20px";
@@ -58,26 +58,24 @@ function setLyricsBackupText(text = "") {
   }
 }
 
-wavesurfer.load(
-  "songs/aghArdeshir - Ba'd Az Bad/aghArdeshir - Ba'd Az Bad.mp3"
-);
+wavesurfer.load(song.songUrl);
 wavesurfer.on("audioprocess", function (currentTime) {
   const index =
-    lyricsTimes.findIndex((member) => member.time - 0.4 >= currentTime) - 1;
+    song.lyrics.findIndex((member) => member.time - 0.4 >= currentTime) - 1;
 
   if (index < 0) {
     lyricsDom.innerHTML = "";
     return;
   }
 
-  if (index === 0 && lyricsTimes[index].time - 0.4 > currentTime) {
+  if (index === 0 && song.lyrics[index].time - 0.4 > currentTime) {
     lyricsDom.innerHTML = "";
     return;
   }
 
-  setLyricsText(lyricsTimes[index].text);
-  if (lyricsTimes[index - 1]) {
-    setLyricsBackupText(lyricsTimes[index - 1].text);
+  setLyricsText(song.lyrics[index].text);
+  if (song.lyrics[index - 1]) {
+    setLyricsBackupText(song.lyrics[index - 1].text);
   }
 });
 
