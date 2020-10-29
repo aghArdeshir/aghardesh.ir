@@ -6,10 +6,10 @@ fetch(song.lyricsUrl)
   .then((res) => res.json())
   .then((lyrics) => {
     document.getElementsByClassName("cover-art")[0].src = song.coverUrl;
-    document.body.style.backgroundColor = song.bgColor;
-    document.body.style.color = song.textColor;
     document.querySelector(".title-persian").textContent = song.title;
     document.querySelector(".artist-persian").textContent = song.artist;
+    document.body.style.backgroundColor = song.bgColor;
+    document.body.style.color = song.textColor;
 
     const animationDuration = 0.3;
     const cssTransition = `all ${animationDuration}s ease-out`;
@@ -19,10 +19,6 @@ fetch(song.lyricsUrl)
 
     const lyricsDom = document.getElementById("lyrics");
     const lyricsBackupDom = document.getElementById("lyrics-backup");
-
-    var wavesurfer = WaveSurfer.create({
-      container: "#waveform",
-    });
 
     let lyricsText = "";
     let lyricsBackupText = "";
@@ -67,6 +63,9 @@ fetch(song.lyricsUrl)
       }
     }
 
+    const wavesurfer = WaveSurfer.create({
+      container: "#waveform",
+    });
     wavesurfer.load(song.songUrl);
     wavesurfer.on("audioprocess", function (currentTime) {
       const index =
