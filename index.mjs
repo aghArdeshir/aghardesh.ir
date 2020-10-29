@@ -13,7 +13,7 @@ fetch(song.lyricsUrl)
 
     const animationDuration = 0.3;
     const cssTransition = `all ${animationDuration}s ease-out`;
-    const cssTop = "0px";
+    const cssTop = "10px";
     const cssFontSize = "18px";
     const cssSmallFontSize = "0px";
 
@@ -48,7 +48,7 @@ fetch(song.lyricsUrl)
         lyricsBackupText = text || "";
 
         lyricsBackupDom.style.transition = "";
-        lyricsBackupDom.style.top = "40px";
+        lyricsBackupDom.style.top = "50px";
         lyricsBackupDom.style.fontSize = cssFontSize;
         lyricsBackupDom.style.opacity = "1";
 
