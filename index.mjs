@@ -11,7 +11,8 @@ fetch(song.lyricsUrl)
     document.querySelector(".title-persian").textContent = song.title;
     document.querySelector(".artist-persian").textContent = song.artist;
 
-    const cssTransition = "all 0.4s ease-out";
+    const animationDuration = 0.3;
+    const cssTransition = `all ${animationDuration}s ease-out`;
     const cssTop = "0px";
     const cssFontSize = "18px";
     const cssSmallFontSize = "0px";
@@ -42,7 +43,7 @@ fetch(song.lyricsUrl)
           lyricsDom.style.top = cssTop;
           lyricsDom.style.fontSize = cssFontSize;
           lyricsDom.style.opacity = "1";
-        }, 400);
+        }, animationDuration * 1000);
       }
     }
 
@@ -62,21 +63,23 @@ fetch(song.lyricsUrl)
           lyricsBackupDom.style.top = cssTop;
           lyricsBackupDom.style.fontSize = cssSmallFontSize;
           lyricsBackupDom.style.opacity = "0.5";
-        }, 400);
+        }, animationDuration * 1000);
       }
     }
 
     wavesurfer.load(song.songUrl);
     wavesurfer.on("audioprocess", function (currentTime) {
       const index =
-        lyrics.findIndex((member) => member.time - 0.4 >= currentTime) - 1;
+        lyrics.findIndex(
+          (member) => member.time - animationDuration >= currentTime
+        ) - 1;
 
       if (index < 0) {
         lyricsDom.innerHTML = "";
         return;
       }
 
-      if (index === 0 && lyrics[index].time - 0.4 > currentTime) {
+      if (index === 0 && lyrics[index].time - animationDuration > currentTime) {
         lyricsDom.innerHTML = "";
         return;
       }
