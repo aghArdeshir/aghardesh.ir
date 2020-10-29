@@ -1,4 +1,4 @@
-const lyricsTimes = [
+const lyricsTime = [
   { time: 0 },
   { time: 21.5, text: "باس بدونی توبه کنی پاک نمیشی" },
   { time: 23.6, text: "حتی اگه چالش کنی روش یه من خاک بریزی" },
@@ -18,7 +18,10 @@ const lyricsTimes = [
   { time: 55.8, text: "حتی با این که دست خالیه و هستی سطح صفر" },
   { time: 58.6, text: "کلید این فقر چرت" },
   { time: 60.0, text: "بی عدالتیا" },
-  { time: 61.1, text: "به این روتین غیر رویایی دیگه باج ندیم هااااااااااا" },
+  {
+    time: 61.1,
+    text: "به این روتین غیر رویایی دیگه باج ندیم هااااااااااا",
+  },
   { time: 64.0, text: "کلید این جنگا" },
   { time: 65.2, text: "این بحثا" },
   { time: 65.9, text: "این اعصاب" },
@@ -35,82 +38,4 @@ const lyricsTimes = [
   { time: 85.5 },
 ];
 
-const cssTransition = "all 0.4s ease-out";
-const cssTop = "-20px";
-const cssFontSize = "18px";
-const cssSmallFontSize = "0px";
-
-const lyricsDom = document.getElementById("lyrics");
-const lyricsBackupDom = document.getElementById("lyrics-backup");
-
-var wavesurfer = WaveSurfer.create({
-  container: "#waveform",
-});
-
-let lyricsText = "";
-let lyricsBackupText = "";
-
-function setLyricsText(text = "") {
-  if (lyricsText !== text) {
-    lyricsText = text || "";
-
-    lyricsDom.style.transition = "";
-    lyricsDom.style.top = "70px";
-    lyricsDom.style.fontSize = cssSmallFontSize;
-    lyricsDom.style.opacity = "0.5";
-
-    lyricsDom.innerHTML = lyricsText;
-
-    setTimeout(() => {
-      lyricsDom.style.transition = cssTransition;
-      lyricsDom.style.top = cssTop;
-      lyricsDom.style.fontSize = cssFontSize;
-      lyricsDom.style.opacity = "1";
-    }, 400);
-  }
-}
-
-function setLyricsBackupText(text = "") {
-  if (lyricsBackupText !== text) {
-    lyricsBackupText = text || "";
-
-    lyricsBackupDom.style.transition = "";
-    lyricsBackupDom.style.top = "20px";
-    lyricsBackupDom.style.fontSize = cssFontSize;
-    lyricsBackupDom.style.opacity = "1";
-
-    lyricsBackupDom.innerHTML = lyricsBackupText;
-
-    setTimeout(() => {
-      lyricsBackupDom.style.transition = cssTransition;
-      lyricsBackupDom.style.top = cssTop;
-      lyricsBackupDom.style.fontSize = cssSmallFontSize;
-      lyricsBackupDom.style.opacity = "0.5";
-    }, 400);
-  }
-}
-
-wavesurfer.load("./aghArdeshir%20-%20After%20Bad.mp3");
-wavesurfer.on("audioprocess", function (currentTime) {
-  const index =
-    lyricsTimes.findIndex((member) => member.time - 0.4 >= currentTime) - 1;
-
-  if (index < 0) {
-    lyricsDom.innerHTML = "";
-    return;
-  }
-
-  if (index === 0 && lyricsTimes[index].time - 0.4 > currentTime) {
-    lyricsDom.innerHTML = "";
-    return;
-  }
-
-  setLyricsText(lyricsTimes[index].text);
-  if (lyricsTimes[index - 1]) {
-    setLyricsBackupText(lyricsTimes[index - 1].text);
-  }
-});
-
-setTimeout(() => {
-  wavesurfer.play();
-}, 1000);
+export default lyricsTime;
