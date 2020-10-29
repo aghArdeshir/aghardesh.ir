@@ -8,6 +8,10 @@ export const songs = {
         "songs/aghArdeshir - Ba'd Az Bad/ba'd-az-bad.original.1800x1800.png",
       songUrl: "songs/aghArdeshir - Ba'd Az Bad/aghArdeshir - Ba'd Az Bad.mp3",
       lyrics: aghArdeshirBadAzBadLyrics,
+      bgColor: "#252527",
+      textColor: "white",
+      title: "بعد از بد",
+      artist: "آق‌اردشیر",
     },
   },
   nishkhand: {
@@ -17,6 +21,10 @@ export const songs = {
       songUrl:
         "songs/Nishkhand - Sarbasteye Yek Sarbaz/Nishkhand - Sarbasteye Yek Sarbaz 128.mp3",
       lyrics: nishkhandSarbasteyeYekSarbazLyrics,
+      bgColor: "white",
+      textColor: "black",
+      title: "سربسته‌ی یک سرباز",
+      artist: "نیشخند",
     },
   },
 };

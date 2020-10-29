@@ -1,10 +1,14 @@
 import { songs } from "./songs/songs.mjs";
-const song = songs.aghArdeshir.badAzBad;
+const song = songs.nishkhand.sarbasteyeYekSarbaz;
 
 document.getElementsByClassName("cover-art")[0].src = song.coverUrl;
+document.body.style.backgroundColor = song.bgColor;
+document.body.style.color = song.textColor;
+document.querySelector(".title-persian").textContent = song.title;
+document.querySelector(".artist-persian").textContent = song.artist;
 
 const cssTransition = "all 0.4s ease-out";
-const cssTop = "-20px";
+const cssTop = "0px";
 const cssFontSize = "18px";
 const cssSmallFontSize = "0px";
 
@@ -23,7 +27,7 @@ function setLyricsText(text = "") {
     lyricsText = text || "";
 
     lyricsDom.style.transition = "";
-    lyricsDom.style.top = "70px";
+    lyricsDom.style.top = "90px";
     lyricsDom.style.fontSize = cssSmallFontSize;
     lyricsDom.style.opacity = "0.5";
 
@@ -43,7 +47,7 @@ function setLyricsBackupText(text = "") {
     lyricsBackupText = text || "";
 
     lyricsBackupDom.style.transition = "";
-    lyricsBackupDom.style.top = "20px";
+    lyricsBackupDom.style.top = "40px";
     lyricsBackupDom.style.fontSize = cssFontSize;
     lyricsBackupDom.style.opacity = "1";
 
