@@ -1,6 +1,9 @@
 import { songs } from "./songs/songs.mjs";
 
-const song = songs.nishkhand.sarbasteyeYekSarbaz;
+const song = [
+  songs.aghArdeshir.badAzBad,
+  songs.nishkhand.sarbasteyeYekSarbaz,
+][0];
 
 fetch(song.lyricsUrl)
   .then((res) => res.json())
