@@ -6,66 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ardeshir Izadi</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital@1&display=swap" rel="stylesheet">
+
     <style>
+        body {
+            display: grid;
+            grid-template-columns: auto 3fr;
+            font-family: 'B612 Mono', monospace;
+        }
+
         section {
             border: 1px solid;
             padding: 5px;
             margin: 5px;
         }
+
+        section h2:first-child {
+            font-family: 'Major Mono Display', monospace;
+        }
+
+        .overview-section {
+            grid-row: 1 / 5;
+        }
+
+
+        .job-record {
+            border-top: 1px solid;
+            padding: 20px 10px;
+        }
+
+        .job-start-date,
+        .job-end-date {
+            font-size: 10px;
+            color: gray;
+        }
+
+        .job-start-date {
+            margin-right: 30px;
+        }
+
+        .job-end-date {
+            margin-left: 30px;
+        }
+
+        .job-duration {
+            color: red
+        }
+
+        img {
+            border-radius: 50%;
+            transition: pointer-events .4s;
+        }
+
+        img:hover {
+            transform: scaleX(-1);
+        }
+
+        .overview-top-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid;
+        }
+
+        .key-value-key {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .key-value-key small {
+            font-size: 9px;
+        }
     </style>
 </head>
 
 <body>
-    <section>
-        <h4>Overview & Personal</h4>
-        <img src="aghardeshir.jpeg" />
-        <h1>Ardeshir Izadi</h1>
-        <div>Years of experience: <span id="years-of-experience"></span></div>
+    <section class="overview-section">
+        <div class="overview-top-section">
+            <h2>Overview & Personal</h2>
+            <img src="aghardeshir.jpeg" width="200" height="200" />
+            <h1>Ardeshir Izadi</h1>
+        </div>
         <div>Javascript Developer (Mostly Frontend)</div>
-        <div>Currently working at: <span id="currently-working-at"></span></div>
-        <div>Age: <span id="age"></span></div>
-        <div>Current Location: Tehran, Iran</div>
-        <div>Relocation, Mobility: Would love to 💘💘💘</div>
+        <div><span class="key-value-key">Years of <small>(professional)</small> experience</span>: ~ 3 Years<span
+                id="years-of-experience"></span></div>
+        <div><span class="key-value-key">Currently working at</span>: Amnafzar Co.<span
+                id="currently-working-at"></span></div>
+        <div><span class="key-value-key">Age</span>: 27<span id="age"></span></div>
+        <div><span class="key-value-key">Current Location</span>: Tehran, Iran</div>
+        <div><span class="key-value-key">Relocation, Mobility</span>: Would love to 💘💘💘</div>
         <div>
-            How to contact:
+            <span class="key-value-key">How to contact:</span>
+            <br />
             <a href="tel:+989039460954">Call +98 903 946 0954</a>
+            <br />
             <a href="mailto:ardeshireo@gmail.com">Email ardeshireo@gmail.com</a>
         </div>
     </section>
 
     <section>
-        <h4>Work Experience</h4>
-        <div>
+        <h2>Work Experience</h2>
+        <div class="job-record">
             <h5>Frontend Developer @ Amnafzar Co.</h5>
             <span>Tehran, Iran</span>
-            <div><span>June2019</span>~ 1.5 Years (and counting...)<span>Present</span></div>
-            <p>Worked on various projects, mostly WordPress, and OpenCart. I mostly fixed PHP & JS Issuesthere. + some
-                HTML/CSS tweaks.</p>
+            <div class="job-duration"><span class="job-start-date">June2019</span>~ 1.5 Years (and counting...)<span
+                    class="job-end-date">Present</span></div>
+            <p>Technologies I use at Amnafzar are confidential. But my main role here is also Web-Application
+                development, Front-end weighted. The main benefit of working at Amnafzar is expert people I get
+                to work with and how teams are structured, managed & projects are planned. My best team-work experience
+                happened here and this is my first time bootstrapping and completing a professional-grade
+                Web-Application from the ground up.</p>
         </div>
-        <div>
+        <div class="job-record">
             <h5>Doing Stuff @ ~Home</h5>
             <span>Tehran, Iran</span>
-            <div><span>April2019</span>~ 3 Months<span>May2019</span></div>
+            <div class="job-duration"><span class="job-start-date">April2019</span>~ 3 Months<span
+                    class="job-end-date">May2019</span></div>
             <p>TODO: My main role here is to develop three different projects simultaneously (2 front-end & 1 back-end).
                 Also as side jobs I do some web server administration and a little deployment architecturedesign. My
                 main stack here is JavaScript & it's Eco-system. (JavaScript packages, Node,JavaScript in browser,
                 mostly React, Express & pure NodeJS) Core system knowledge &projects I work on are vast here.</p>
         </div>
-        <div>
+        <div class="job-record">
             <h5>Frontend Apps Specialist @ <a href="https://www.esahra.ir/home">Rahpooyan Pardazesh Gostar Sahra</a>
             </h5>
             <span>Tehran, Iran</span>
-            <div><span>November2018</span>~ 6 Months<span>March2019</span></div>
+            <div class="job-duration"><span class="job-start-date">November2018</span>~ 6 Months<span
+                    class="job-end-date">March2019</span>
+            </div>
             <p>I work on different projects using different technologies, all in different fields of Iran Stock
                 Market(option, future, online, etc...). I mostly use Angular & VueJs, But gained experience
                 withReactNative, Docker and some basic web server administration. Also I did some open
                 sourcecontribution to libraries that we used in our projects, including PerfectScrollbar, NgBootstrap
                 andVuePager among them.</p>
         </div>
-        <div>
+        <div class="job-record">
             <h5>Frontend Web Developer @ <a href="https://www.rns.ir/">Hasin Co.</a></h5>
             <span>Tehran, Iran</span>
-            <div><span>May2017</span>~ 1.5 Years<span>November2018</span></div>
+            <div class="job-duration"><span class="job-start-date">May2017</span>~ 1.5 Years<span
+                    class="job-end-date">November2018</span>
+            </div>
             <p>I worked as frontend web developer, mostly used javascript and packages or tools that work
                 withjavascript. Mostly TypeScript, AngularJS, Cordova (I build hybrid applications), etc ...
                 <br />
@@ -73,23 +155,27 @@
                 animations, all layout-systems, sass, etc..
             </p>
         </div>
-        <div>
+        <div class="job-record">
             <h5>Freelancer @ Home</h5>
             <span>Hamedan, Iran</span>
-            <div><span>November2016</span>~ 6 Months<span>April2017</span></div>
+            <div class="job-duration"><span class="job-start-date">November2016</span>~ 6 Months<span
+                    class="job-end-date">April2017</span>
+            </div>
             <p>Freelancing on random web-related and a few C++/CUDA projects</p>
         </div>
-        <div>
+        <div class="job-record">
             <h5>Fullstack Junior Web Developer @ Susha Design Group</h5>
             <span>Hamedan, Iran</span>
-            <div><span>July2013</span>~ 6 Months<span>December2013</span></div>
+            <div class="job-duration"><span class="job-start-date">July2013</span>~ 6 Months<span
+                    class="job-end-date">December2013</span>
+            </div>
             <p>Worked on various projects, mostly WordPress, and OpenCart. I mostly fixed PHP & JS Issuesthere. + some
                 HTML/CSS tweaks.</p>
         </div>
     </section>
 
     <section>
-        <h4>Skills & Technologies</h4>
+        <h2>Skills & Technologies</h2>
         <div class="technology-advanced"><a
                 href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a></div>
         <div class="technology-basic"><a href="https://docs.nginx.com/nginx/admin-guide/web-server/">NGINX</a></div>
@@ -116,22 +202,22 @@
     </section>
 
     <section>
-        <h4>Non-Programming Languages</h4>
+        <h2>Non-Programming Languages</h2>
 
         <div><strong><em>Persian:</em></strong> Native</div>
         <div><strong><em>English:</em></strong> Fluent</div>
     </section>
 
     <section>
-        <h4>Anything else to share?</h4>
+        <h2>Anything else to share?</h2>
         <ul>
-            <li>I'm a full-stack developer when it comes to Javascript. Can build anything from A to Z when it comes to
+            <li>I'm a full-stack developer and can build anything from A to Z when it comes to
                 Javascript. Specialised in Web Application Development.</li>
-            <li>I like R&D and doing DevOps like assignments.</li>
+            <li>I like R&Ds.</li>
+            <li>I like doing DevOps-like assignments.</li>
             <li>I adapt, learn & develop fast.</li>
             <li>I can dive into legacy code, adapt, cleanup, refactor and come out with a nice code and neat
                 build-system.</li>
-                <li></li>
         </ul>
     </section>
 </body>
