@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital@1&display=swap" rel="stylesheet">
 
-    <style>
+    <style type="text/css">
         body {
             display: grid;
             grid-template-columns: auto 3fr;
@@ -35,20 +35,43 @@
         .job-record {
             border-top: 1px solid;
             padding: 20px 10px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-gap: 20px;
+        }
+
+        .job-record h5 {
+            margin: 0
         }
 
         .job-start-date,
         .job-end-date {
             font-size: 10px;
             color: gray;
+            grid-column: 1;
+        }
+
+        .job-details {
+            grid-column: 2;
+            grid-row: 2;
         }
 
         .job-start-date {
-            margin-right: 30px;
+            grid-row: 3
         }
 
         .job-end-date {
-            margin-left: 30px;
+            grid-row: 1;
+        }
+
+        .timeline {
+            grid-row: 2;
+            grid-column: 1;
+            width: 1px;
+            height: 100%;
+            background-color: gray;
+            margin-left: 10px;
         }
 
         .job-duration {
@@ -109,68 +132,96 @@
     <section>
         <h2>Work Experience</h2>
         <div class="job-record">
-            <h5>Frontend Developer @ Amnafzar Co.</h5>
-            <span>Tehran, Iran</span>
-            <div class="job-duration"><span class="job-start-date">June2019</span>~ 1.5 Years (and counting...)<span
-                    class="job-end-date">Present</span></div>
-            <p>Technologies I use at Amnafzar are confidential. But my main role here is also Web-Application
-                development, Front-end weighted. The main benefit of working at Amnafzar is expert people I get
-                to work with and how teams are structured, managed & projects are planned. My best team-work experience
-                happened here and this is my first time bootstrapping and completing a professional-grade
-                Web-Application from the ground up.</p>
-        </div>
-        <div class="job-record">
-            <h5>Doing Stuff @ ~Home</h5>
-            <span>Tehran, Iran</span>
-            <div class="job-duration"><span class="job-start-date">April2019</span>~ 3 Months<span
-                    class="job-end-date">May2019</span></div>
-            <p>TODO: My main role here is to develop three different projects simultaneously (2 front-end & 1 back-end).
-                Also as side jobs I do some web server administration and a little deployment architecturedesign. My
-                main stack here is JavaScript & it's Eco-system. (JavaScript packages, Node,JavaScript in browser,
-                mostly React, Express & pure NodeJS) Core system knowledge &projects I work on are vast here.</p>
-        </div>
-        <div class="job-record">
-            <h5>Frontend Apps Specialist @ <a href="https://www.esahra.ir/home">Rahpooyan Pardazesh Gostar Sahra</a>
-            </h5>
-            <span>Tehran, Iran</span>
-            <div class="job-duration"><span class="job-start-date">November2018</span>~ 6 Months<span
-                    class="job-end-date">March2019</span>
+            <span class="job-start-date">June2019</span>
+            <span class="timeline"></span>
+            <span class="job-end-date">Present</span>
+            <div class="job-details">
+                <h5>Frontend Developer @ Amnafzar Co.</h5>
+                <span>Tehran, Iran</span>
+                <div class="job-duration">~ 1.5 Years (and counting...)</div>
+                <p>Technologies I use at Amnafzar are confidential. But my main role here is also Web-Application
+                    development, Front-end weighted. The main benefit of working at Amnafzar is expert people I get
+                    to work with and how teams are structured, managed & projects are planned. My best team-work
+                    experience
+                    happened here and this is my first time bootstrapping and completing a professional-grade
+                    Web-Application from the ground up.</p>
             </div>
-            <p>I work on different projects using different technologies, all in different fields of Iran Stock
-                Market(option, future, online, etc...). I mostly use Angular & VueJs, But gained experience
-                withReactNative, Docker and some basic web server administration. Also I did some open
-                sourcecontribution to libraries that we used in our projects, including PerfectScrollbar, NgBootstrap
-                andVuePager among them.</p>
         </div>
         <div class="job-record">
-            <h5>Frontend Web Developer @ <a href="https://www.rns.ir/">Hasin Co.</a></h5>
-            <span>Tehran, Iran</span>
-            <div class="job-duration"><span class="job-start-date">May2017</span>~ 1.5 Years<span
-                    class="job-end-date">November2018</span>
+            <span class="job-start-date">April2019</span>
+            <span class="timeline"></span>
+            <span class="job-end-date">May2019</span>
+            <div class="job-details">
+                <h5>Doing Stuff @ ~Home</h5>
+                <span>Tehran, Iran</span>
+                <div class="job-duration">~ 3 Months</div>
+                <p>TODO: My main role here is to develop three different projects simultaneously (2 front-end & 1
+                    back-end).
+                    Also as side jobs I do some web server administration and a little deployment architecturedesign. My
+                    main stack here is JavaScript & it's Eco-system. (JavaScript packages, Node,JavaScript in browser,
+                    mostly React, Express & pure NodeJS) Core system knowledge &projects I work on are vast here.</p>
             </div>
-            <p>I worked as frontend web developer, mostly used javascript and packages or tools that work
-                withjavascript. Mostly TypeScript, AngularJS, Cordova (I build hybrid applications), etc ...
-                <br />
-                I know material design basics (I used AngularMaterial there) and have intermediate knowledge ofcss
-                animations, all layout-systems, sass, etc..
-            </p>
         </div>
         <div class="job-record">
-            <h5>Freelancer @ Home</h5>
-            <span>Hamedan, Iran</span>
-            <div class="job-duration"><span class="job-start-date">November2016</span>~ 6 Months<span
-                    class="job-end-date">April2017</span>
+            <span class="job-start-date">November2018</span>
+            <span class="timeline"></span>
+            <span class="job-end-date">March2019</span>
+            <div class="job-details">
+                <h5>Frontend Apps Specialist @ <a href="https://www.esahra.ir/home">Rahpooyan Pardazesh Gostar Sahra</a>
+                </h5>
+                <span>Tehran, Iran</span>
+                <div class="job-duration">~ 6 Months
+                </div>
+                <p>I work on different projects using different technologies, all in different fields of Iran Stock
+                    Market(option, future, online, etc...). I mostly use Angular & VueJs, But gained experience
+                    withReactNative, Docker and some basic web server administration. Also I did some open
+                    sourcecontribution to libraries that we used in our projects, including PerfectScrollbar,
+                    NgBootstrap
+                    andVuePager among them.</p>
             </div>
-            <p>Freelancing on random web-related and a few C++/CUDA projects</p>
         </div>
         <div class="job-record">
-            <h5>Fullstack Junior Web Developer @ Susha Design Group</h5>
-            <span>Hamedan, Iran</span>
-            <div class="job-duration"><span class="job-start-date">July2013</span>~ 6 Months<span
-                    class="job-end-date">December2013</span>
+            <span class="job-start-date">May2017</span>
+            <span class="timeline"></span>
+            <span class="job-end-date">November2018</span>
+            <div class="job-details">
+                <h5>Frontend Web Developer @ <a href="https://www.rns.ir/">Hasin Co.</a></h5>
+                <span>Tehran, Iran</span>
+                <div class="job-duration">~ 1.5 Years
+                </div>
+                <p>I worked as frontend web developer, mostly used javascript and packages or tools that work
+                    withjavascript. Mostly TypeScript, AngularJS, Cordova (I build hybrid applications), etc ...
+                    <br />
+                    I know material design basics (I used AngularMaterial there) and have intermediate knowledge ofcss
+                    animations, all layout-systems, sass, etc..
+                </p>
             </div>
-            <p>Worked on various projects, mostly WordPress, and OpenCart. I mostly fixed PHP & JS Issuesthere. + some
-                HTML/CSS tweaks.</p>
+        </div>
+        <div class="job-record">
+            <span class="job-start-date">November2016</span>
+            <span class="timeline"></span>
+            <span class="job-end-date">April2017</span>
+            <div class="job-details">
+                <h5>Freelancer @ Home</h5>
+                <span>Hamedan, Iran</span>
+                <div class="job-duration">~ 6 Months
+                </div>
+                <p>Freelancing on random web-related and a few C++/CUDA projects</p>
+            </div>
+        </div>
+        <div class="job-record">
+            <span class="job-start-date">July2013</span>
+            <span class="timeline"></span>
+            <span class="job-end-date">December2013</span>
+            <div class="job-details">
+                <h5>Fullstack Junior Web Developer @ Susha Design Group</h5>
+                <span>Hamedan, Iran</span>
+                <div class="job-duration">~ 6 Months
+                </div>
+                <p>Worked on various projects, mostly WordPress, and OpenCart. I mostly fixed PHP & JS Issuesthere. +
+                    some
+                    HTML/CSS tweaks.</p>
+            </div>
         </div>
     </section>
 
