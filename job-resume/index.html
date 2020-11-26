@@ -18,8 +18,17 @@
     <style type="text/css">
         body {
             display: grid;
-            grid-template-columns: auto 3fr;
+            grid-template-columns: 1fr;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0;
             font-family: 'B612 Mono', monospace;
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                grid-template-columns: auto 1fr;
+            }
         }
 
         section {
