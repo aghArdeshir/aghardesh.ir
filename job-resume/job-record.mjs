@@ -1,3 +1,7 @@
+import { colors } from './colors.mjs';
+
+let counter = 0;
+
 class JobRecordCustomElement extends HTMLDivElement {
   constructor() {
     super();
@@ -15,12 +19,31 @@ class JobRecordCustomElement extends HTMLDivElement {
     const style = document.createElement('style');
     style.textContent = `
     .job-record {
-        border-top: 1px solid;
-        padding: 20px 10px;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto 1fr auto;
-        grid-gap: 20px;
+      border-top: 1px solid;
+      padding: 20px 10px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-gap: 20px;
+    }
+    
+    :host {
+      position: relative;
+      display: block;
+    }
+    
+    :host::after {
+      content: ' ';
+      width: 250px;
+      height: 50px;
+      display: block;
+      background-color: #264653;
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      background-image: linear-gradient(to left, ${
+        colors[counter++ % colors.length]
+      }, white);
     }
 
     .job-record h5 {
