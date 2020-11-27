@@ -112,7 +112,18 @@ class JobRecordCustomElement extends HTMLDivElement {
     jobDetailsWrapper.setAttribute('class', 'job-details');
 
     const header = document.createElement('h5');
-    header.textContent = this.getAttribute('job-title');
+    header.textContent = this.getAttribute('job-title') + ' @ ';
+    const companyTitle = document.createElement(
+      this.getAttribute('company-link') ? 'a' : 'span'
+    );
+    companyTitle.textContent = this.getAttribute('company-title');
+    if (this.getAttribute('company-link')) {
+      companyTitle.setAttribute('href', this.getAttribute('company-link'));
+      companyTitle.setAttribute('target', '_blank');
+      companyTitle.setAttribute('rel', 'noopener');
+    }
+    header.appendChild(companyTitle);
+
     jobDetailsWrapper.appendChild(header);
 
     const location = document.createElement('span');
