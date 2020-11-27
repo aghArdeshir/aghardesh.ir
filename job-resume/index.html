@@ -19,6 +19,7 @@
         body {
             display: grid;
             grid-template-columns: 1fr;
+            grid-template-rows: repeat(8, auto);
             max-width: 1800px;
             margin: 0 auto;
             padding: 0;
@@ -28,6 +29,22 @@
         @media (min-width: 1200px) {
             body {
                 grid-template-columns: auto 1fr;
+            }
+
+            .work-experience-section {
+                grid-row: 1;
+            }
+
+            .skills-technologies-section {
+                grid-row: 2;
+            }
+
+            .languages-section {
+                grid-row: 3;
+            }
+
+            .other-notes-section {
+                grid-row: 4;
             }
         }
 
@@ -39,12 +56,6 @@
 
         section h2:first-child {
             font-family: 'Major Mono Display', monospace;
-        }
-
-        .overview-section {
-            grid-row: 1 / 1000
-                /* Infinity */
-            ;
         }
 
         img {
@@ -72,20 +83,24 @@
             font-size: 9px;
         }
 
+        .overview-section {
+            grid-row: 1;
+        }
+
         .work-experience-section {
-            grid-row: 1
+            grid-row: 2;
         }
 
         .skills-technologies-section {
-            grid-row: 2
+            grid-row: 3;
         }
 
         .languages-section {
-            grid-row: 3
+            grid-row: 4;
         }
 
         .other-notes-section {
-            grid-row: 4
+            grid-row: 5;
         }
     </style>
 </head>
