@@ -50,6 +50,7 @@ class JobSkillCustomElement extends HTMLDivElement {
     if (this.getAttribute('skill-link')) {
       const link = document.createElement('a');
       link.setAttribute('href', this.getAttribute('skill-link'));
+      link.setAttribute('rel', 'noopener');
       link.setAttribute('target', '_blank');
       link.setAttribute('class', 'link-to-skill');
 
