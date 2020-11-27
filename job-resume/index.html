@@ -15,94 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital@1&display=swap"
         rel="stylesheet" />
 
-    <style type="text/css">
-        body {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(8, auto);
-            max-width: 1800px;
-            margin: 0 auto;
-            padding: 0;
-            font-family: 'B612 Mono', monospace;
-        }
-
-        @media (min-width: 1200px) {
-            body {
-                grid-template-columns: auto 1fr;
-            }
-
-            .work-experience-section {
-                grid-row: 1;
-            }
-
-            .skills-technologies-section {
-                grid-row: 2;
-            }
-
-            .languages-section {
-                grid-row: 3;
-            }
-
-            .other-notes-section {
-                grid-row: 4;
-            }
-        }
-
-        section {
-            border: 1px solid;
-            padding: 5px;
-            margin: 5px;
-        }
-
-        section h2:first-child {
-            font-family: 'Major Mono Display', monospace;
-        }
-
-        img {
-            border-radius: 50%;
-            transition: pointer-events 0.4s;
-        }
-
-        img:hover {
-            transform: scaleX(-1);
-        }
-
-        .overview-top-section {
-            text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 50px;
-            border-bottom: 1px solid;
-        }
-
-        .key-value-key {
-            font-size: 12px;
-            color: gray;
-        }
-
-        .key-value-key small {
-            font-size: 9px;
-        }
-
-        .overview-section {
-            grid-row: 1;
-        }
-
-        .work-experience-section {
-            grid-row: 2;
-        }
-
-        .skills-technologies-section {
-            grid-row: 3;
-        }
-
-        .languages-section {
-            grid-row: 4;
-        }
-
-        .other-notes-section {
-            grid-row: 5;
-        }
-    </style>
+    <link rel="stylesheet"
+        type="text/css"
+        href="index.css" />
 </head>
 
 <body>
@@ -212,48 +127,92 @@
 
     <section class="skills-technologies-section">
         <h2>Skills & Technologies</h2>
-        <div class="technology-advanced">
-            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a>
-        </div>
-        <div class="technology-basic">
-            <a href="https://docs.nginx.com/nginx/admin-guide/web-server/">NGINX</a>
-        </div>
-        <div class="technology-advanced">RegEx</div>
-        <div class="technology-basic">
-            <a href="https://man7.org/linux/man-pages/dir_section_1.html">Linux 💘💘💘</a>
-        </div>
-        <div class="technology-advanced">
-            <a href="https://git-scm.com/docs">Git</a>
-        </div>
-        <div class="technology-expert">
-            <a href="https://github.com/facebook/react/tree/master/packages/react-dom/src/client">React</a>
-        </div>
-        <div class="technology-intermediate">VueJS</div>
-        <div class="technology-intermediate">Typescript</div>
-        <div class="technology-expert">Javascript</div>
-        <div class="technology-advanced">
-            <a href="https://docs.angularjs.org/guide">AngularJS</a>
-        </div>
-        <div class="technology-advanced">
-            <a href="https://nodejs.org/dist/latest-v14.x/docs/api/">NodeJS</a>
-        </div>
-        <div class="technology-intermediate">
-            <a href="https://expressjs.com/en/4x/api.html">ExpressJS</a>
-        </div>
-        <div class="technology-intermediate">
-            <a href="https://angular.io/guide/architecture-next-steps">Angular</a>
-        </div>
-        <div class="technology-basic">MongoDB</div>
-        <div class="technology-basic">MySQL</div>
-        <div class="technology-advanced">
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">HTML</a>
-            +
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">CSS</a>
-        </div>
-        <div class="technology-basic">
-            <a href="https://www.sfml-dev.org/tutorials/2.5/">C++</a> &
-            <a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html">CUDA</a>
-        </div>
+
+        <job-skill level="advanced"
+            skill-link="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">
+            DOM
+        </job-skill>
+
+        <job-skill level="basic"
+            skill-link="https://docs.nginx.com/nginx/admin-guide/web-server/">
+            NGINX
+        </job-skill>
+
+        <job-skill level="advanced"
+            skill-link="">RegEx</job-skill>
+
+        <job-skill level="basic"
+            skill-link="https://man7.org/linux/man-pages/dir_section_1.html">
+            Linux 💘💘💘
+        </job-skill>
+
+        <job-skill level="advanced"
+            skill-link="https://git-scm.com/docs">
+            Git
+        </job-skill>
+
+        <job-skill level="expert"
+            skill-link="https://github.com/facebook/react/tree/master/packages/react-dom/src/client">
+            React
+        </job-skill>
+
+        <job-skill level="intermediate"
+            skill-link="">VueJS</job-skill>
+
+        <job-skill level="intermediate"
+            skill-link="">Typescript</job-skill>
+
+        <job-skill level="expert"
+            skill-link="">Javascript</job-skill>
+
+        <job-skill level="advanced"
+            skill-link="https://docs.angularjs.org/guide">
+            AngularJS
+        </job-skill>
+
+        <job-skill level="advanced"
+            skill-link="https://nodejs.org/dist/latest-v14.x/docs/api/">
+            NodeJS
+        </job-skill>
+
+        <job-skill level="intermediate"
+            skill-link="https://expressjs.com/en/4x/api.html">
+            ExpressJS
+        </job-skill>
+
+        <job-skill level="intermediate"
+            skill-link="https://angular.io/guide/architecture-next-steps">
+            Angular
+        </job-skill>
+
+        <job-skill level="basic"
+            skill-link="">MongoDB</job-skill>
+
+        <job-skill level="basic"
+            skill-link="">MySQL</job-skill>
+
+        <job-skill level="advanced"
+            skill-link="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">
+            HTML
+            <job-skill level="advanced"
+                skill-link="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">
+
+                CSS
+            </job-skill>
+
+        </job-skill>
+
+        <job-skill level="basic"
+            skill-link="https://www.sfml-dev.org/tutorials/2.5/">
+            C++
+        </job-skill>
+
+        <job-skill level="basic"
+            skill-link="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html"
+            <a
+            href="">CUDA
+        </job-skill>
+
     </section>
 
     <section class="languages-section">
@@ -286,6 +245,8 @@
 
     <script type="module"
         src="job-record.mjs"></script>
+    <script type="module"
+        src="job-skill.mjs"></script>
 </body>
 
 </html>
