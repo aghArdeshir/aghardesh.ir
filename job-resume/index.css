@@ -70,6 +70,7 @@ img:hover {
 
   .overview-section {
     grid-column: 1;
+    grid-row: 1 / 5;
   }
 
   .work-experience-section {
