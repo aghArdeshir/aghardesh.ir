@@ -23,10 +23,6 @@ img {
   transition: pointer-events 0.4s;
 }
 
-img:hover {
-  transform: scaleX(-1);
-}
-
 .overview-top-section {
   text-align: center;
   margin-bottom: 50px;
@@ -99,6 +95,10 @@ body.dark-theme {
   color: white;
 }
 
+body.dark-theme a {
+  color: white !important;
+}
+
 .theme-changer {
   position: fixed;
   right: 10px;
@@ -132,4 +132,9 @@ body.dark-theme {
 
 * {
   transition: all 1s !important;
+}
+
+.overview-record {
+  display: block;
+  margin-top: 15px;
 }
