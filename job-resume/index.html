@@ -21,6 +21,10 @@
 </head>
 
 <body>
+    <button class="theme-changer default" style="top: 50px" onclick="doDefaultTheme()" title="Default Theme"></button>
+    <button class="theme-changer dark" style="top: 100px" onclick="doDarkTheme()" title="Dark Theme"></button>
+    <button class="theme-changer child" style="top: 150px" onclick="giveBrushToTheChild()" title="Give Brush To The Child"></button>
+
     <section class="overview-section">
         <div class="overview-top-section">
             <h2>Overview & Personal</h2>
@@ -250,6 +254,8 @@
         </ul>
     </section>
 
+    <script type="module"
+        src="index.mjs"></script>
     <script type="module"
         src="job-record.mjs"></script>
     <script type="module"
