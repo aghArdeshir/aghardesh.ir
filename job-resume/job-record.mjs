@@ -32,20 +32,6 @@ class JobRecordCustomElement extends HTMLDivElement {
       display: block;
     }
     
-    :host::after {
-      content: ' ';
-      width: 250px;
-      height: 50px;
-      display: block;
-      background-color: #264653;
-      position: absolute;
-      right: 0px;
-      bottom: 0;
-      background-image: linear-gradient(to left, ${
-        colors[counter++ % colors.length]
-      }, white);
-    }
-
     .job-record h5 {
         margin: 0
     }
