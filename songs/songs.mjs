@@ -10,6 +10,16 @@ export const songs = {
       title: "بعد از بد",
       artist: "آق‌اردشیر",
     },
+    tann4: {
+      coverUrl:
+        "songs/aghArdeshir - 4.5/tann4.original.1800x1800.png",
+      songUrl: "songs/aghArdeshir - 4.5/aghArdeshir - TANN 4 (4.5).mp3",
+      lyricsUrl: "songs/aghArdeshir - 4.5/tann4.lyrics.json",
+      bgColor: "#252527",
+      textColor: "white",
+      title: "چار و نیم",
+      artist: "آق‌اردشیر",
+    },
   },
   nishkhand: {
     sarbasteyeYekSarbaz: {

@@ -3,7 +3,8 @@ import { songs } from "./songs/songs.mjs";
 const song = [
   songs.aghArdeshir.badAzBad,
   songs.nishkhand.sarbasteyeYekSarbaz,
-][0];
+  songs.aghArdeshir.tann4,
+][2];
 
 fetch(song.lyricsUrl)
   .then((res) => res.json())
