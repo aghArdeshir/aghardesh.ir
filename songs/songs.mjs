@@ -12,7 +12,7 @@ export const songs = {
     },
     tann4: {
       coverUrl:
-        "songs/aghArdeshir - 4.5/tann4.original.1800x1800.png",
+        "songs/aghArdeshir - 4.5/tann4.original.900x900.png",
       songUrl: "songs/aghArdeshir - 4.5/aghArdeshir - TANN 4 (4.5).mp3",
       lyricsUrl: "songs/aghArdeshir - 4.5/tann4.lyrics.json",
       bgColor: "#252527",
