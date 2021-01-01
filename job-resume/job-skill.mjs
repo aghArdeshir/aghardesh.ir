@@ -53,7 +53,7 @@ class JobSkillCustomElement extends HTMLElement {
 
     @media (min-width: 600px) {
       .skill-count {        
-        margin-left: 100px;
+        margin-left: 150px;
       }
 
       .job-skill {
