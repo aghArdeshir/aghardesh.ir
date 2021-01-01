@@ -1,4 +1,4 @@
-class JobSkillCustomElement extends HTMLDivElement {
+class JobSkillCustomElement extends HTMLElement {
   constructor() {
     super();
 
@@ -84,4 +84,4 @@ class JobSkillCustomElement extends HTMLDivElement {
   }
 }
 
-customElements.define('job-skill', JobSkillCustomElement, { extends: 'div' });
+customElements.define('job-skill', JobSkillCustomElement);

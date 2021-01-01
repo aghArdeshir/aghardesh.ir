@@ -1,8 +1,4 @@
-import { colors } from "./colors.mjs";
-
-let counter = 0;
-
-class JobRecordCustomElement extends HTMLDivElement {
+class JobRecordCustomElement extends HTMLElement {
   constructor() {
     super();
 
@@ -131,6 +127,4 @@ class JobRecordCustomElement extends HTMLDivElement {
   }
 }
 
-customElements.define("job-record", JobRecordCustomElement, {
-  extends: "div",
-});
+customElements.define("job-record", JobRecordCustomElement);
