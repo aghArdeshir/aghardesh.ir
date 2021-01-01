@@ -37,6 +37,7 @@ class JobRecordCustomElement extends HTMLElement {
         font-size: 10px;
         color: gray;
         grid-column: 1;
+        max-width: 10px;
     }
 
     .job-start-date {
@@ -109,10 +110,6 @@ class JobRecordCustomElement extends HTMLElement {
     header.appendChild(companyTitle);
 
     jobDetailsWrapper.appendChild(header);
-
-    const location = document.createElement("span");
-    location.textContent = this.getAttribute("job-location");
-    jobDetailsWrapper.appendChild(location);
 
     const jobDuration = document.createElement("div");
     jobDuration.setAttribute("class", "job-duration");
