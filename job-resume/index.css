@@ -20,7 +20,7 @@ section h2:first-child {
 
 img {
   border-radius: 50%;
-  transition: pointer-events 0.4s;
+  transition: pointer-events 0.1s;
 }
 
 .overview-top-section {
@@ -131,7 +131,7 @@ body.dark-theme a {
 }
 
 * {
-  transition: all 1s !important;
+  transition: all 0.1s !important;
 }
 
 .overview-record {
