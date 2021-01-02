@@ -45,3 +45,13 @@ function undoDarkTheme() {
 window.doDefaultTheme = doDefaultTheme;
 window.doDarkTheme = doDarkTheme;
 window.giveBrushToTheChild = giveBrushToTheChild;
+
+window.onload = () => {
+  document.addEventListener("colorschemechange", (event) => {
+    if (event.detail.colorScheme === "dark") {
+      doDarkTheme();
+    } else {
+      doDefaultTheme();
+    }
+  });
+};

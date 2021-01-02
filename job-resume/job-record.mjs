@@ -65,9 +65,34 @@ class JobRecordCustomElement extends HTMLElement {
     .job-duration {
         color: red
     }
+
+    .job-record.dark-theme a {
+      color: aqua;
+    }
+
+    .job-record.dark-theme .job-duration {
+      color: gold
+    }
     `;
 
     this.shadowRoot.append(style, this.wrapper);
+
+    this.themeChangeCallback = this.themeChangeCallback.bind(this);
+  }
+
+  themeChangeCallback(event) {
+    this.wrapper.classList.toggle(
+      "dark-theme",
+      event.detail.colorScheme === "dark"
+    );
+  }
+
+  connectedCallback() {
+    document.addEventListener("colorschemechange", this.themeChangeCallback);
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener("colorschemechange", this.themeChangeCallback);
   }
 
   attachJobStartDate() {

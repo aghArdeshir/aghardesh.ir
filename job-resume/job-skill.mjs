@@ -67,9 +67,30 @@ class JobSkillCustomElement extends HTMLElement {
         margin-left: 0;
       }
     }
+
+    .job-skill.dark-theme a {
+      color: aqua;
+    }
     `;
 
     this.shadowRoot.append(style, this.wrapper);
+
+    this.themeChangeCallback = this.themeChangeCallback.bind(this);
+  }
+
+  themeChangeCallback(event) {
+    this.wrapper.classList.toggle(
+      "dark-theme",
+      event.detail.colorScheme === "dark"
+    );
+  }
+
+  connectedCallback() {
+    document.addEventListener("colorschemechange", this.themeChangeCallback);
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener("colorschemechange", this.themeChangeCallback);
   }
 
   attachTechnologyName() {
@@ -114,7 +135,7 @@ class JobSkillCustomElement extends HTMLElement {
       .fill("*")
       .join("");
     span.style.fontSize = levels.indexOf(level) * 2 + 16 + "px";
-    span.style.opacity = (levels.indexOf(level) + 2) * 0.2
+    span.style.opacity = (levels.indexOf(level) + 2) * 0.2;
     this.wrapper.appendChild(span);
   }
 }

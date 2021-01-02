@@ -12,11 +12,30 @@
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital@1&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="index.css" />
+    <style type="text/css">
+        dark-mode-toggle {
+            --dark-mode-toggle-dark-icon: url("light-bulb.png");
+            --dark-mode-toggle-light-icon: url("dark-moon.png");
+            --dark-mode-toggle-icon-size: 2rem;
+            --dark-mode-toggle-icon-filter: invert(100%);
+            --dark-mode-toggle-icon-filter: none;
+
+            position: fixed;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+            opacity: 0.72;
+            top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <button class="theme-changer default" style="top: 50px" onclick="doDefaultTheme()" title="Default Theme"></button>
-    <button class="theme-changer dark" style="top: 100px" onclick="doDarkTheme()" title="Dark Theme"></button>
+    <dark-mode-toggle></dark-mode-toggle>
 
     <section class="overview-section">
         <div class="overview-top-section">
@@ -195,6 +214,7 @@
         </ul>
     </section>
 
+    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
     <script type="module" src="index.mjs"></script>
     <script type="module" src="job-record.mjs"></script>
     <script type="module" src="job-skill.mjs"></script>
