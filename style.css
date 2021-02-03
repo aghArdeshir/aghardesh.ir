@@ -53,6 +53,7 @@ body {
   font-family: Vazir, Tahoma, "DejaVu Sans", helvetica, arial, freesans,
     sans-serif;
   padding-top: 100px;
+  min-height: 100vh;
 }
 
 .waveform {
