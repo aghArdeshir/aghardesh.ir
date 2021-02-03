@@ -4,7 +4,7 @@ const song = [
   songs.aghArdeshir.badAzBad,
   songs.nishkhand.sarbasteyeYekSarbaz,
   songs.aghArdeshir.tann4,
-][0];
+][2];
 
 fetch(song.lyricsUrl)
   .then((res) => res.json())
