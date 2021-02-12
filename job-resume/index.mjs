@@ -15,6 +15,8 @@ window.doDefaultTheme = doDefaultTheme;
 window.doDarkTheme = doDarkTheme;
 
 window.onload = () => {
+  if (localStorage.getItem("dark-mode-toggle") === "dark") doDarkTheme();
+
   document.addEventListener("colorschemechange", (event) => {
     if (event.detail.colorScheme === "dark") {
       doDarkTheme();
