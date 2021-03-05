@@ -11,13 +11,21 @@ export const songs = {
       artist: "آق‌اردشیر",
     },
     tann4: {
-      coverUrl:
-        "songs/aghArdeshir - 4.5/4-30-cover.png",
+      coverUrl: "songs/aghArdeshir - 4.5/4-30-cover.png",
       songUrl: "songs/aghArdeshir - 4.5/aghArdeshir - TANN 4 (4.5).mp3",
       lyricsUrl: "songs/aghArdeshir - 4.5/tann4.lyrics.json",
       bgColor: "black",
       textColor: "white",
       title: "چار و نیم",
+      artist: "آق‌اردشیر",
+    },
+    mordBaram: {
+      coverUrl: "songs/aghArdeshir - Mord Baram/Mord Baram Cover.png",
+      songUrl: "songs/aghArdeshir - Mord Baram/aghArdeshir - Mord Baram.mp3",
+      lyricsUrl: "songs/aghArdeshir - Mord Baram/MordBaram.lyrics.json",
+      bgColor: "rgb(0, 4, 27)",
+      textColor: "white",
+      title: "مُرد برام",
       artist: "آق‌اردشیر",
     },
   },
