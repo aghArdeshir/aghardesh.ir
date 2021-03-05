@@ -60,3 +60,26 @@ body {
   position: relative;
   margin-top: -20px;
 }
+
+.background-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  filter: blur(40px);
+}
+
+.secondary-background {
+  background-color: rgba(0, 0, 0, 80);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  position: fixed;
+  opacity: 0.72;
+}

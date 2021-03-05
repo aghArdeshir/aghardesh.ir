@@ -4,7 +4,8 @@ const song = [
   songs.aghArdeshir.badAzBad,
   songs.nishkhand.sarbasteyeYekSarbaz,
   songs.aghArdeshir.tann4,
-][2];
+  songs.aghArdeshir.mordBaram,
+][3];
 
 fetch(song.lyricsUrl)
   .then((res) => res.json())
@@ -12,8 +13,17 @@ fetch(song.lyricsUrl)
     document.getElementsByClassName("cover-art")[0].src = song.coverUrl;
     document.querySelector(".title-persian").textContent = song.title;
     document.querySelector(".artist-persian").textContent = song.artist;
-    document.body.style.backgroundColor = song.bgColor;
     document.body.style.color = song.textColor;
+
+    const backgroundContainerDom = document.querySelector(
+      ".background-container"
+    );
+    backgroundContainerDom.style.backgroundImage = `url("${song.coverUrl}")`;
+
+    const secondaryBackgroundDom = document.querySelector(
+      ".secondary-background"
+    );
+    secondaryBackgroundDom.style.backgroundColor = song.bgColor;
 
     const animationDuration = 0.3;
     const cssTransition = `all ${animationDuration}s ease-out`;
